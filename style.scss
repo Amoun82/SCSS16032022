@@ -1,0 +1,98 @@
+/* extende */
+%mesprofil{
+    text-decoration: underline;
+}
+
+@mixin moi {
+    font-size: 50px;
+}
+
+$premier : random($limit: 255) ;
+$second : random($limit: 255) ;
+$troisieme : random($limit: 255) ;
+
+
+$premierBorder : random($limit: 255) ;
+$secondBorber : random($limit: 255) ;
+$troisiemeBorder : random($limit: 255) ;
+
+$premierBG : random($limit: 255) ;
+$secondBG : random($limit: 255) ;
+$troisiemeBG : random($limit: 255) ;
+
+
+
+@function maCouleur () {
+    @return rgb($premier,$second,$troisieme) ;
+};
+
+@function couleurBorder() {
+    @return rgb($premierBorder,$secondBorber,$troisiemeBorder) ;
+};
+
+
+@function couleurBG() {
+    @return rgb($premierBG,$secondBG,$troisiemeBG) ;
+};
+
+@function margin() {
+    @return round(random(500))+px round(random(400))+px ;
+}
+
+@function salim($nbre){
+   $resultat : $nbre * 10 ;
+   @return $resultat ; 
+}
+
+$colorTest : maCouleur() ;
+$colorBorder : couleurBorder() ;
+$couleurBG : couleurBG() ;
+
+$couleurBleu : blue ;
+$couleurViolet : purple ;
+$hover : gold ;
+
+$testContainer : 1000 ;
+$test : 1 ;
+
+
+
+h1{
+    color : $colorTest ;
+    background-color: darken($color: $couleurBleu, $amount: 20%);
+    margin: margin();
+    &:hover{
+        color : $hover ;
+    }
+    @extend %mesprofil ;
+    @include moi ;
+}
+
+h2{
+    background-color: lighten($color: $couleurViolet, $amount: 20%);
+    &:hover{
+        color : $hover ;
+    }
+}
+
+.container{
+    height: 1000px;
+    border: 1px solid $colorBorder;
+    @if( $testContainer == 1000){
+        background-color: darken(couleurBG(),20%) ;
+    }@else{
+        background-color: lighten(couleurBG(),20%) ;
+    }
+}
+
+.sous-div{
+    height: salim(20)+px;
+    border: 1px dashed $colorBorder ;
+    background-color: couleurBG() ;
+
+    @if($test == 1){
+        color : white ;
+    }@else{
+        color : red ;
+    }
+}

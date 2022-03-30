@@ -1,0 +1,37 @@
+/* extende */
+h1 {
+  text-decoration: underline;
+}
+
+h1 {
+  color: #37e0b1;
+  background-color: #000099;
+  margin: 479px 251px;
+  font-size: 50px;
+}
+
+h1:hover {
+  color: gold;
+}
+
+h2 {
+  background-color: #e600e6;
+}
+
+h2:hover {
+  color: gold;
+}
+
+.container {
+  height: 1000px;
+  border: 1px solid #36513e;
+  background-color: #d21217;
+}
+
+.sous-div {
+  height: 200px;
+  border: 1px dashed #36513e;
+  background-color: #f1595d;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
